@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <title>Carousel</title>
+            <link rel="stylesheet" href="index.css">
+    </head>
+
+
+    <!-- This sets the initial display of the first image to none -->
+    <style>
+        .carousel img {
+            display: none;
+        }
+    </style>
+
+    <body>
+        <h1>My Carousel</h1>
+
+        <div class="carousel">
+            
+            <img width="25%" alt="First" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Un1.svg/1200px-Un1.svg.png" />
+            <img width="25%" alt="Second" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Deux.svg/800px-Deux.svg.png" />
+            <img width="25%" alt="Third" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Trois.svg/1200px-Trois.svg.png" />
+            <img width="25%" alt="Fourth" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Quatre.svg/640px-Quatre.svg.png" />
+            <img width="25%" alt="Fifth" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Cinq.svg/800px-Cinq.svg.png" />
+        </div>
+       
+       
+       
+       
+       <script>
+            // This will get all images under the carousel div
+            const carouselImages = document.querySelectorAll('.carousel img');
+
+            // This sets the index of the variable i to 0
+            let i = 0;
+
+            // this will set the interval to 1
+            setInterval(() => {
+            // This will hide the previous image once displayed
+                carouselImages[i].style.display = 'none';
+            // Increment the index
+                i = (i + 1) % carouselImages.length;
+            // Show the next image
+                carouselImages[i].style.display = 'block';
+            }, 1000);
+        </script>
+
+    </body>
+</html>
